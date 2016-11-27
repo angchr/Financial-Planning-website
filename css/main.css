@@ -1,0 +1,65 @@
+body {
+  height: 100%
+}
+
+.container-fluid {
+  background-color: #716E6E;
+}
+
+.sidenav {
+  display: none;
+  padding-right: 0;
+  width: 28%;
+  border: solid;
+}
+
+#plan-builder-nav {
+  display: none;
+  padding-right: 0;
+  width: 28%;
+  
+}
+
+.agenda {
+  display: none;
+  width: 68%;
+  padding-left: 0;
+}
+
+.plan {
+  display: none;
+  width: 68%;
+  padding-left: 0;
+}
+
+.well {
+  background-color: grey;
+}
+
+.list-group {
+  margin-left: 15px;
+}
+
+.border {
+  text-align: center;
+  border: solid;
+  border-color: #15F60B;
+  border-radius: 4px;
+}
+
+.welcome {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 50px;
+  height: 300px;
+}
+
+.start {
+  width: 200px;
+  height: 300px;
+  margin-top: 50px;
+}
+
+.tut {
+  display: none;
+}

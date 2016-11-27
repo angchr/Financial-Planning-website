@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- I have not added any responsiveness as yet, still to do -->
+
+  <title>Financial Framework Demo</title>
+  <link rel="stylesheet" href="js/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Take back your Power</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Start Here</a></li>
+          <li><a href="#">Default Plan</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="sidenav col-sm-3">
+          <h2>Financial Agenda</h2>
+        <ul>
+          <li>Risk Cover</li>
+          <ul>
+            <li id="lifeCoverMenu">Life Cover</li>
+            <li id="cicMenu">Critical Illness</li>
+            <li id="disMenu">Disability</li>
+            <li id="incomeMenu">Income Protection</li>
+          </ul>
+          <li>Retirement</li>
+          <ul>
+            <li id="savMenu">Saving</li>
+            <li id="retireMenu">Retiring</li>
+            <li id="lirMenu">Living in retirement</li>
+          </ul>
+          <li>Investment and Savings</li>
+          <ul>
+            <li id="bankMenu">Bank savings</li>
+            <li id="utMenu">Unit Trusts</li>
+            <li id="stockMenu">Stock Market</li>
+            <li id="intMenu">International Options</li>
+          </ul>
+          <li>Legacy</li>
+          <ul>
+            <li id="estateMenu">Estate Duty</li>
+            <li id="probateMenu">Probate</li>
+            <li id="willMenu">Will</li>
+            <li id="trustMenu">Trusts and Trustees</li>
+          </ul>
+        </ul>
+
+        <div class="well col-sm-3" id = "plan-builder-nav">
+          <ul id="newMenu">
+          </ul>
+        </div>
+
+      </div>
+      <div class="well plan col-sm-9">
+      </div>
+
+    <div class="well agenda col-sm-9">
+      <p>Financial Agenda<p>
+        <p>Where to start, this can be the hardest part, expecially if you have been feeling uncomfortable
+          or out of control regarding your financial services and planning life. The best plave to start is
+          generally at the beginning, we have found that it is usefull to go through everything from a heightlevel
+          and see what you are happy about and not so happy about, giving some focus on what to do to get going.<p>
+        <p>Ready, lets go on this journey together, click next<p>
+          <button class="btn btn-default" type="button">Let's start</button>
+          <button class="btn btn-default" type="button" id="createPlan">Create</button>
+        <p>In this section you just answer a simple yes or no to each area, so we can go into detail into the
+          areas of concern, and visit the areas you are not to concerned about later<p>
+            <form name="formInit" method="post" id="formSelect">
+            <ul class="list-group">
+              <li class="list-group-item" id="list-life-cover">Life Cover<span class="badge"><label class="radio-inline"><input type="radio" id="lifeCoverTrue" name="optradio" value="lifeTrue">Happy</label>
+              <label class="radio-inline" id="lifeCoverFalse"><input type="radio" value= "lifeFalse" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-cic">Critical Illness<span class="badge"><label class="radio-inline" id="cicTrue"><input type="radio" name="optradio" value="cicTrue">Happy</label>
+              <label class="radio-inline" id="cicFalse"><input type="radio" name="optradio" value="cicFalse">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-dis">Disability<span class="badge"><label class="radio-inline" id="disTrue"><input type="radio" name="optradio" value="disTrue">Happy</label>
+              <label class="radio-inline" id="disFalse"><input type="radio" name="optradio" value="disFalse">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-income">Income Protection<span class="badge"><label class="radio-inline" id="incomeTrue"><input type="radio" name="optradio" value="incomeTrue">Happy</label>
+              <label class="radio-inline" id="incomeFalse"><input type="radio" name="optradio" value="incomeFalse">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-sav">Savings<span class="badge"><label class="radio-inline" id="savTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="savFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-retire">Retiring<span class="badge"><label class="radio-inline" id="retireTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="retireFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-lir">Living in Retirement<span class="badge"><label class="radio-inline" id="lirTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="lirFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-bank">Bank Savings<span class="badge"><label class="radio-inline" id="bankTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="bankFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-ut">Unit Trusts<span class="badge"><label class="radio-inline" id="utTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="utFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-stock">Stock Market<span class="badge"><label class="radio-inline" id="stockTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="stockFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-int">International Investments<span class="badge"><label class="radio-inline" id="intTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="intFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-estate">Estate Duty<span class="badge"><label class="radio-inline" id="estateTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="estateFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-probate">Probate<span class="badge"><label class="radio-inline" id="probateTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="probateFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-will">Wills<span class="badge"><label class="radio-inline" id="willTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="willFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+
+              <li class="list-group-item" id="list-trust">Trusts<span class="badge"><label class="radio-inline" id="trustTrue"><input type="radio" name="optradio">Happy</label>
+              <label class="radio-inline" id="trustFalse"><input type="radio" name="optradio">Not Happy</label></span></li>
+            </ul>
+          </form>
+
+    </div>
+      <div class="border welcome col-sm-9">
+        <h2>Welcome</h2>
+        <p>A few to things to know about this site, it is intended to help people organise
+        their meetings with their financial advisers better. It does not offer advise, nor do
+        we recommend any products. While we do produce action steps, based on what you have entered,
+        these are there so that you have a clearer view of one possible way to get the most
+        out of your meetings with your financial adviser, and have a better interaction with
+        your personal fiancial life. </p>
+        <p>I welcome your feedback, and hope you get value out of this site.</p>
+          <b>Yes you will need to answer some questions
+        and even fill in some personal information, we do not disclose or use this in any way, other than to
+        provide you with the necessary information.</b></p>
+      </div>
+
+      <div class="border start col-sm-3">
+        <h2>Start Here</h2>
+        <div>
+          <button class="btn btn-default" type="button">START</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="border tut col-sm-9">
+        <p>Couple of questions to get us going. Just a quick tour, the slider starts at very poor on the left
+      and goes to leave it out on the right. The labels are pretty self explanatory. Slide the marker to your
+      desired position for each question, when you are ready to move on, click next below.</p>
+
+      <form name="quest" method="post">
+        <label id="q1">How do you currently feel about your overall financial plan?</label>
+        <p id="slider-1"></p>
+      </form>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="border risk col-sm-5">
+          <h3>Risk</h3>
+          <p>Life Cover</p>
+          <div class="well life row">
+            <p>Life Cover is one of the cheapest and safest form of insurance cover available. Of course
+              this comes with a warning, as a life company will asses your risk of dying before insuring you,
+              and in some cases this may prove to be expensive or you are unable to get insurance.</p>
+            <p>You should cover all your long term debts using life cover, if you have dependants. by this,
+              we mean, if you die, will those left behind be financially worse off. If yes, cover you debts
+              at a minimume.</p>
+            <p>Are you happy with your current level of life cover ? YES / NO</p>
+            <p>if yes, complete, if no, go to questions </p>
+            <ul>
+              <li>Are you concerned about your level of cover?</li>
+              <li>Are you concerned about life cover in genrale?</li>
+              <li>Are you able to talk to a broker?</li>
+              <li>Would you like to add this to your framework?</li>
+            </ul>
+          </div>
+          <p>Critical Illness Cover</p>
+          <div class="well cic row">
+            <p>One of the most expensive covers today, due to the high rates of lifestyle desease and
+              cancer. The main purpose of this cover is to help you pay for an emergency medical procedure
+              which medical aid dont cover.</p>
+            <p>If you can afford this cover it is recommended that you get it, the amount is usually
+              based on affordability, due to the high cost</p>
+              <p>Are you happy with your current level of critical illness cover ? YES / NO</p>
+              <p>if yes, complete, if no, go to questions </p>
+              <ul>
+                <li>Are you concerned about your level of cover?</li>
+                <li>Are you concerned about cover in genrale?</li>
+                <li>Are you able to talk to a broker?</li>
+                <li>Would you like to add this to your framework?</li>
+              </ul>
+          </div>
+          <p>Lump sum disability cover</p>
+          <div class="well dis row">
+            <p>The main thing to keep in mind when buying this type of cover, is what you are covered for.
+              Disability cover is depedant on what you do for a living and if you can continue to earn from
+              your job in the event of a disability. This cover is good, however you must ensure that you get
+              the right cover.</p>
+            <p> Some questions you should ask your broker, or the person trying to sell you this cover :</p>
+            <ul>
+              <li>Am i covered for my own occupation?</li>
+              <li>What events will I be paid out? (think fo practical examples that pertain to you)</li>
+              <li>Will I get partial payment if I can continue to work in a diminshed capacity</li>
+            </ul>
+            <p>Are you happy with your current level of disability cover ? YES / NO</p>
+            <p>if yes, complete, if no, go to questions </p>
+            <ul>
+              <li>Are you concerned about your level of cover?</li>
+              <li>Are you concerned about cover in genrale?</li>
+              <li>Are you able to talk to a broker?</li>
+              <li>Would you like to add this to your framework?</li>
+            </ul>
+          </div>
+          <p>Income disabilty</p>
+          <div class="well income row">
+            <p>One of the most underused insurance covers in the world. It is amazing, how people insure
+              themselves against theft, cancer, car accidents and even death, yet they choose not to insure
+              their income, the one thing that holds all other insurances in place.</p>
+            <p>Insure your income</p>
+            <p>Are you happy with your current level of disability cover ? YES / NO</p>
+            <p>if yes, complete, if no, go to questions </p>
+            <ul>
+              <li>Are you concerned about your level of cover?</li>
+              <li>Are you concerned about cover in generale?</li>
+              <li>Are you able to talk to a broker?</li>
+              <li>Would you like to add this to your framework?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border retirement col-sm-5">
+          <h3>Retirement</h3>
+        </div>
+        <div class="border investment col-sm-5">
+          <h3>Investment</h3>
+        </div>
+        <div class="border legacy col-sm-5">
+          <h3>Legacy</h3>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/script.js"></script>
+<!--<script>
+$( function() {
+  $( "input" ).checkboxradio();
+  $( "fieldset" ).controlgroup();
+} );
+</script>-->
+</html>
